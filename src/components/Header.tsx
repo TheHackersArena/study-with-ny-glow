@@ -1,15 +1,15 @@
 
 import React from 'react';
 import { useTimer } from '@/contexts/TimerContext';
-import { MoonStar, Sun, Volume2, VolumeX } from 'lucide-react';
+import { Volume2, VolumeX } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { MusicPlayer } from '@/components/MusicPlayer';
+import { ThemeSelector } from '@/components/ThemeSelector';
 
 export function Header() {
   const { streak, muteSound, toggleMute } = useTimer();
-  const { theme, setTheme } = useTheme();
   
   return (
     <header className="w-full flex items-center justify-between p-4">
@@ -69,21 +69,16 @@ export function Header() {
           </Tooltip>
         </TooltipProvider>
         
-        {/* Theme toggle */}
+        {/* Theme selector */}
         <TooltipProvider>
           <Tooltip>
             <TooltipTrigger asChild>
-              <Button 
-                variant="ghost" 
-                size="icon" 
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                className="text-primary-600 hover:text-primary-700 dark:text-primary-300 dark:hover:text-primary-200"
-              >
-                {theme === 'dark' ? <Sun size={20} /> : <MoonStar size={20} />}
-              </Button>
+              <div>
+                <ThemeSelector />
+              </div>
             </TooltipTrigger>
             <TooltipContent>
-              <p>Toggle {theme === 'dark' ? 'light' : 'dark'} mode</p>
+              <p>Change wallpaper theme</p>
             </TooltipContent>
           </Tooltip>
         </TooltipProvider>

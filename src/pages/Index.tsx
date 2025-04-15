@@ -13,7 +13,7 @@ import { ThemeProvider } from 'next-themes';
 
 const Index = () => {
   return (
-    <ThemeProvider attribute="class" defaultTheme="dark">
+    <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
       <TimerProvider>
         <div className="min-h-screen w-full cityscape-bg overflow-hidden">
           <ParticleBackground />

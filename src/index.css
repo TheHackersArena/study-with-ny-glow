@@ -45,6 +45,8 @@
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    --current-wallpaper: 'nyc-sunset';
   }
 
   .dark {
@@ -177,10 +179,51 @@
     left: 0;
     right: 0;
     height: 30%;
-    background-image: url('/skyline.svg');
+    background-image: url('/wallpapers/var(--current-wallpaper).svg');
     background-size: cover;
     background-position: bottom center;
     background-repeat: no-repeat;
-    opacity: 0.7;
+    opacity: 0.9;
+  }
+  
+  /* Theme-specific backgrounds */
+  .cityscape-bg[data-theme="nyc-sunset"] {
+    background-image: linear-gradient(to bottom, #1a1f2c, #433873, #9b87f5);
+  }
+  
+  .cityscape-bg[data-theme="nyc-sunset"]::after {
+    background-image: url('/wallpapers/nyc-sunset.svg');
+  }
+  
+  .cityscape-bg[data-theme="midnight-city"] {
+    background-image: linear-gradient(to bottom, #0f1219, #222547, #4a3a82);
+  }
+  
+  .cityscape-bg[data-theme="midnight-city"]::after {
+    background-image: url('/wallpapers/midnight-city.svg');
+  }
+  
+  .cityscape-bg[data-theme="purple-dusk"] {
+    background-image: linear-gradient(to bottom, #2d1b4e, #5c3e99, #b69df8);
+  }
+  
+  .cityscape-bg[data-theme="purple-dusk"]::after {
+    background-image: url('/wallpapers/purple-dusk.svg');
+  }
+  
+  .cityscape-bg[data-theme="ocean-blue"] {
+    background-image: linear-gradient(to bottom, #0a192f, #0c2d6b, #0ea5e9);
+  }
+  
+  .cityscape-bg[data-theme="ocean-blue"]::after {
+    background-image: url('/wallpapers/ocean-blue.svg');
+  }
+  
+  .cityscape-bg[data-theme="sunset-gold"] {
+    background-image: linear-gradient(to bottom, #2d1b2e, #5c3e59, #f97316);
+  }
+  
+  .cityscape-bg[data-theme="sunset-gold"]::after {
+    background-image: url('/wallpapers/sunset-gold.svg');
   }
 }
