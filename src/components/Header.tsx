@@ -15,9 +15,6 @@ export function Header() {
     <header className="w-full flex items-center justify-between p-4">
       <div className="flex items-center">
         <h1 className="text-3xl font-caveat font-bold mr-2">Study with NY</h1>
-        <span className="text-xs text-primary-600 dark:text-primary-300">
-          Powered by Lovable AI
-        </span>
       </div>
       
       <div className="flex items-center gap-3">
